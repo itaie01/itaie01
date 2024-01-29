@@ -1,0 +1,21 @@
+# build output
+personal-website/dist/
+# generated types
+personal-website/.astro/
+
+# dependencies
+personal-website/node_modules/
+
+# logs
+personal-website/npm-debug.log*
+personal-website/yarn-debug.log*
+personal-website/yarn-error.log*
+personal-website/pnpm-debug.log*
+
+
+# environment variables
+personal-website/.env
+personal-website/.env.production
+
+# macOS-specific files
+personal-website/.DS_Store

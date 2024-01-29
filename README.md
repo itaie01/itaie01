@@ -1,0 +1,5 @@
+- 👋 Hi, I'm @itaie01!
+- 💻 I'm a recent graduate of McGill University in Computer Science and Mathematics.
+- 👀 I'm looking for a job or internship in web development, data science, or software development.
+- 🤝 I'm looking and open to collaborate on anything!
+- 📫 You can reachme at [itainepstein@gmail.com](mailto:itainepstein@gmail.com)
