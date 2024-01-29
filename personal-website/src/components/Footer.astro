@@ -1,0 +1,18 @@
+---
+import Social from './Social.astro';
+const linkedin = "linkedin";
+---
+<style>
+    footer {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+</style>
+
+<footer>
+    <!-- <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p> -->
+    <Social platform="github" username="itaie01" />
+    <Social platform="instagram" username="itai.epstein" />
+    <a href=`https://www.${linkedin}.com/in/itai-epstein`>{linkedin}</a>
+</footer>
