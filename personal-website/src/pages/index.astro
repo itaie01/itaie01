@@ -1,14 +1,19 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting.jsx';
-const pageTitle = 'Home Page';
+    import '../styles/global.css';
+    import VoronoiBeehive from '../components/Voronoi beehive.svelte';
+    import VoronoiRegular from '../components/Voronoi regular.svelte';
 ---
 
-<BaseLayout pageTitle={pageTitle}> <!-- can just do pageTitle because the variables are the same name -->
-    <h2>My awesome blog subtitle.</h2>
-    <!-- non-hydrated component -->
-    <!-- <Greeting messages={["Hi", "Hello", "Howdy", "Bonjour", "Salut", "Shalom"]} /> -->
-
-    <!-- hydrated component -->
-    <Greeting client:load messages={["Hi", "Hello", "Howdy", "Bonjour", "Salut", "Shalom", "Hej", "Hallo", "Hola"]} /> 
-</BaseLayout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+        <VoronoiRegular client:only />
+        <h1 class="text-md font-bold underline">Hello World</h1>
+	</body>
+</html>

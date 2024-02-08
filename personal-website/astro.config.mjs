@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
+import svelte from "@astrojs/svelte";
 
-import preact from "@astrojs/preact";
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://itaie.netlify.app/",
-  integrations: [preact()]
+  integrations: [svelte(), tailwind()]
 });

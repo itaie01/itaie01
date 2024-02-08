@@ -14,8 +14,8 @@ personal-website/pnpm-debug.log*
 
 
 # environment variables
-personal-website/.env
-personal-website/.env.production
+personal-website/.DS_Store.env
+personal-website/.DS_Store.env.production
 
 # macOS-specific files
 personal-website/.DS_Store
