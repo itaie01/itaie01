@@ -11,10 +11,13 @@ export default {
                 'nordDark1': '#3B4252',
                 'nordDark2': '#434C5E',
                 'nordDark3': '#4C566A',
-                'nord7': '#8FBCBB',
-                'nord8': '#88C0D0',
-                'nord9': '#81A1C1',
-                'nord10': '#5E81AC',
+                'nord7': '#8FBCBB', // A calm and highly contrasted color reminiscent of frozen polar water.
+                'nord8': '#88C0D0', // The bright and shiny primary accent color reminiscent of pure and clear ice.
+                'nord9': '#81A1C1', // A more darkened and less saturated color reminiscent of arctic waters.
+                'nord10': '#5E81AC', // A dark and intensive color reminiscent of the deep arctic ocean.
+            },
+            fontFamily: {
+                'display': ['DisplayOTF'],
             },
         },
 	},

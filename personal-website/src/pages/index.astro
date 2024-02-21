@@ -1,19 +1,23 @@
 ---
-    import '../styles/global.css';
-    import VoronoiBeehive from '../components/Voronoi beehive.svelte';
-    import VoronoiRegular from '../components/Voronoi regular.svelte';
+import VoronoiRegular from '../components/Voronoi regular.svelte';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import ItaiPixelated from '../assets/itai-pixelated-no-background.png';
+const pageTitle = 'Itai Epstein'
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        <VoronoiRegular client:only />
-        <h1 class="text-md font-bold underline">Hello World</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <VoronoiRegular client:only />
+    <div class="flex flex-auto justify-center content-middle gap-10 flex-wrap">
+        <div class="md:py-[16rem]">
+            <Image
+                src={ItaiPixelated}
+                alt='pixelated version of itai epstein'
+                class="dark:opacity-[75] portrait-pixel-corners"
+            />
+        </div>
+        <div class="font-pixel text-lg text-wrap md:py-[26rem] px-[4rem] dark:text-nordLight0">
+            <p>Hello! I'm Itai. I am a programmer, McGill alumni, and a general tech enthusiast.</p>
+            <p>I am currently based in Montréal, Canada.</p>
+        </div>
+    </div>
+</BaseLayout>

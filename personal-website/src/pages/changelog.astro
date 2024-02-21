@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import VoronoiRegular from '../components/Voronoi regular.svelte';
+const pageTitle = 'Changelog'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <VoronoiRegular client:only />
+</BaseLayout>

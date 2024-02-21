@@ -11,14 +11,14 @@
 
 
     $: randomColor = () => {
-        let randomNum = Math.floor(scaleLinear().domain([0, 1]).range([0, 3])(Math.random()));
+        let randomNum = Math.floor(scaleLinear().domain([0, 1]).range([0, 2])(Math.random()));
         switch (randomNum) {
             case 0:
                 return !darkModeEnabled ? '#ECEFF4' : '#2E3440';
             case 1:
                 return !darkModeEnabled ? '#E5E9F0' : '#3B4252';
-            case 2:
-                return !darkModeEnabled ? '#D8DEE9' : '#434C5E';
+            // case 2:
+            //     return !darkModeEnabled ? '#D8DEE9' : '#434C5E';
             default:
                 return 'steelblue';
         }
@@ -27,7 +27,7 @@
     let width, height;
     let voronoi;
 
-    const data = Array.from({length: 50}).map(() => {
+    const data = Array.from({length: 15}).map(() => {
         return {
             a: Math.random(),
             b: Math.random()
@@ -70,8 +70,8 @@
 <main
     bind:clientWidth={width}
     bind:clientHeight={height}
-    on:mousemove={handleMouseMove}
 >
+    <!-- on:mousemove={handleMouseMove} -->
     <svg
         width={width}
         height={height}
@@ -104,5 +104,11 @@
         width: 100vw;
         height: 100vh;
         overflow: hidden;
+        position: absolute;
+        z-index: -10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 </style>

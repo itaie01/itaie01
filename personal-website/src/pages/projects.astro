@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import VoronoiRegular from '../components/Voronoi regular.svelte';
+import Project from '../components/Project.svelte';
+const pageTitle = 'Projects'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <!-- <VoronoiRegular client:only /> -->
+    <Project />
+</BaseLayout>
