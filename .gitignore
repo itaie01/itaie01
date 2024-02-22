@@ -19,3 +19,4 @@ personal-website/.DS_Store.env.production
 
 # macOS-specific files
 personal-website/.DS_Store
+.DS_Store
