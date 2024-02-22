@@ -1,8 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
+import BlogPost from '../components/BlogPost.astro';
+import Voronoi from '../components/Voronoi.svelte';
+const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = 'Blog'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+    <Voronoi client:only />
+    <ul>
+        { allPosts.map( post => <BlogPost url={post.url} title={post.frontmatter.title} /> ) }
+    </ul>
 </BaseLayout>

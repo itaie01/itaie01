@@ -2,21 +2,68 @@
     import { scaleLinear, Delaunay } from 'd3';
     import '../styles/global.css';
 
+
     const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
     let darkModeEnabled = darkModeQuery.matches;
+
+    // Change the icons inside the button based on previous settings
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        themeToggleLightIcon.classList.add('hidden');
+        darkModeEnabled = false;
+    } else {
+        themeToggleDarkIcon.classList.add('hidden');
+        darkModeEnabled = true;
+    }
+
+    const toggleDarkMode = () => {
+        // toggle icons inside button
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
+
+        // if set via local storage previously
+        if (localStorage.getItem('color-theme')) {
+            if (localStorage.getItem('color-theme') === 'light') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                darkModeEnabled = true;
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                darkModeEnabled = false;
+            }
+
+        // if NOT set via local storage previously
+        } else {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                darkModeEnabled = false;
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                darkModeEnabled = true;
+            }
+        }
+    }
+
     darkModeQuery.addEventListener('change', event => {
-        darkModeEnabled = !darkModeEnabled;
-        // console.log('Theme changed to:', event.matches ? 'dark' : 'light');
+        toggleDarkMode()
     });
 
+    let themeToggleBtn = document.getElementById('theme-toggle');
+    themeToggleBtn.addEventListener('click', () => {
+        toggleDarkMode()
+    });
 
     $: randomColor = () => {
         let randomNum = Math.floor(scaleLinear().domain([0, 1]).range([0, 2])(Math.random()));
         switch (randomNum) {
             case 0:
-                return !darkModeEnabled ? '#ECEFF4' : '#2E3440';
+                return darkModeEnabled ? '#2E3440' : '#ECEFF4';
             case 1:
-                return !darkModeEnabled ? '#E5E9F0' : '#3B4252';
+                return darkModeEnabled ? '#3B4252' : '#E5E9F0';
             // case 2:
             //     return !darkModeEnabled ? '#D8DEE9' : '#434C5E';
             default:
@@ -87,7 +134,7 @@
                 stroke="none"
             />
 
-            <path
+            <path 
                 d={voronoi.renderCell(index)}
                 fill={randomColor()}
                 stroke="none"

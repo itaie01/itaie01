@@ -1,23 +1,32 @@
 ---
-import VoronoiRegular from '../components/Voronoi regular.svelte';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Voronoi from '../components/Voronoi.svelte';
+import Socials from '../components/Socials.astro';
+
 import { Image } from 'astro:assets';
+
 import ItaiPixelated from '../assets/itai-pixelated-no-background.png';
 const pageTitle = 'Itai Epstein'
+
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <VoronoiRegular client:only />
+    <Voronoi client:only />
     <div class="flex flex-auto justify-center content-middle gap-10 flex-wrap">
-        <div class="md:py-[16rem]">
+        <div class="md:pt-[16rem]">
             <Image
                 src={ItaiPixelated}
                 alt='pixelated version of itai epstein'
                 class="dark:opacity-[75] portrait-pixel-corners"
             />
         </div>
-        <div class="font-pixel text-lg text-wrap md:py-[26rem] px-[4rem] dark:text-nordLight0">
-            <p>Hello! I'm Itai. I am a programmer, McGill alumni, and a general tech enthusiast.</p>
-            <p>I am currently based in Montréal, Canada.</p>
+        <div class="font-pixel text-lg text-wrap md:pt-[26rem] px-[4rem] dark:text-nordLight0">
+            <p class="cursor-text">Hello! I'm Itai. I am a programmer, McGill alumni, and a general tech enthusiast.</p>
+            <p class="cursor-text">I am currently based in Montréal, Canada.</p>
+        </div>
+    </div>
+    <div class="mx-auto py-[4rem]">
+        <div class="flex justify-center">
+            <Socials />
         </div>
     </div>
 </BaseLayout>

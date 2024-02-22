@@ -1,12 +1,14 @@
 ---
 import { Image } from 'astro:assets';
+
+import TheamToggle from './ThemeToggle.astro';
 import MyNameDisplay from '../assets/name.tiff';
 
 ---
 
 <nav class="flex px-10 h-16 items-center justify-between font-pixel text-nordDark0 dark:text-nordLight0">
     <div class="mr-4">
-        <a class="block px-10 py-0 sm:inline-block sm:px-4 sm:py-5" href="/">
+        <a class="block px-10 py-0 sm:inline-block sm:px-4 sm:py-5 cursor-pointer" href="/">
             <Image 
                 src={MyNameDisplay} 
                 alt='name in customized display font'
@@ -17,8 +19,9 @@ import MyNameDisplay from '../assets/name.tiff';
         </a>
     </div>
     <ul class="flex space-x-4">
-        <li><a class="block text-center px-15 no-underline text-2xl font-bold uppercase sm:inline-block sm:px-4 sm:py-5" href="/changelog/">Changelog</a></li>
-        <li><a class="block text-center px-15 no-underline text-2xl font-bold uppercase sm:inline-block sm:px-4 sm:py-5" href="/projects/">Projects</a></li>
-        <li><a class="block text-center px-15 no-underline text-2xl font-bold uppercase sm:inline-block sm:px-4 sm:py-5" href="/blog/">Blog</a></li>
+        <li><a class="block text-center px-15 no-underline text-2xl font-bold uppercase sm:inline-block sm:px-4 sm:py-5 cursor-pointer" href="/changelog/">Changelog</a></li>
+        <li><a class="block text-center px-15 no-underline text-2xl font-bold uppercase sm:inline-block sm:px-4 sm:py-5 cursor-pointer" href="/projects/">Projects</a></li>
+        <li><a class="block text-center px-15 no-underline text-2xl font-bold uppercase sm:inline-block sm:px-4 sm:py-5 cursor-pointer" href="/blog/">Blog</a></li>
+        <TheamToggle />
     </ul>    
 </div>

@@ -1,0 +1,8 @@
+---
+import { Image } from 'astro:assets';
+const { socialObj } = Astro.props;
+---
+
+<a href={socialObj.link} class="inline-flex items-center justify-center whitespace-nowrap portrait-pixel-corners ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-inherit hover:bg-accent hover:text-accent-foreground size-8 cursor-pointer dark:invert">
+    <Image src={socialObj.src} alt={socialObj.alt} />
+</a>

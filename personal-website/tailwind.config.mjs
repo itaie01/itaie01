@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+    darkMode: 'class',
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+        cursor: {
+            'default': "url('../assets/cursor.svg'), default",
+            'pointer': "url('../assets/click.svg'), pointer",
+            'text': "url('../assets/text_selector.svg'), text",
+        },
 		extend: {
             colors: {
                 'nordLight0': '#ECEFF4',

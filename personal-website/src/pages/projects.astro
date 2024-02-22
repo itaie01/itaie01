@@ -1,11 +1,60 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import VoronoiRegular from '../components/Voronoi regular.svelte';
-import Project from '../components/Project.svelte';
+import Voronoi from '../components/Voronoi.svelte';
+import Project from '../components/Project.astro';
+
+import TouchBar from '../assets/touchbar.png';
+import Bike from '../assets/bike.png';
+import MusicMap from '../assets/music_map.png';
+import TikTok from '../assets/tik-tok.png';
+
 const pageTitle = 'Projects'
+
+let projects = [
+    {
+        "src": TouchBar,
+        "alt": 'vector graphic of macbookpro with touchbar',
+        'title': 'Run Code Shortcut',
+        'link': "https://marketplace.visualstudio.com/items?itemName=iepstein.run-code",
+        'description': "A VSCode extention adding a run and stop code execution button to MacBook Pros with a TouchBar",
+        'tags': ['TypeScript'],
+    },
+    {
+        "src": TikTok,
+        "alt": 'tiktok logo',
+        'title': 'TikTok Bot & Scraper',
+        'link': "https://github.com/itaie01/TikTokScraper",
+        'description': "A TikTok Scraper that automatically interacts with videos based on pre-defined user interests",
+        'tags': ['Python', 'Selenium', 'Chrome Web Driver'],
+    },
+    {
+        "src": Bike,
+        "alt": 'a road bicycle',
+        'title': 'Bixi Winter Pilot Reimagined',
+        'link': "https://github.com/itaie01/Bixi_Winter_Pilot_Redone",
+        'description': "A data analysis and visualization of chosen Bixi docks for the 2023-2024 Winter Pilot based on past riding data",
+        'tags': ['Python', 'QGIS', 'JavaScript', 'Svelte', 'Astro', 'MapBox'],
+    },
+    {
+        "src": MusicMap,
+        "alt": 'music note on map',
+        'title': 'Tempo Based Navigation',
+        'link': "https://github.com/itaie01/Tempo-Based-Navigation",
+        'description': "A data analysis and visualization of chosen Bixi docks for the 2023-2024 Winter Pilot based on past riding data",
+        'tags': ['JavaScript', 'Svelte', 'Astro', 'React', 'Express', 'MapBox', 'Leaflet'],
+    }
+]
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <!-- <VoronoiRegular client:only /> -->
-    <Project />
+    <Voronoi client:only />
+    <div>
+        <div class="mx-auto max-w-full">
+            <div class="flex flex-auto flex-wrap justify-center align-middle">
+                { projects.map( project => <Project projectObj={project} /> ) }
+            </div>
+        </div>
+    </div>
+    
+   
 </BaseLayout>

@@ -1,0 +1,35 @@
+---
+import Social from './Social.astro';
+
+import Initials from '../assets/initials.tiff';
+import Email from '../assets/email.png';
+import GitHub from '../assets/github.png';
+import LinkedIn from '../assets/linkedin.png';
+
+let socials = [
+    {
+        'src': Initials,
+        'alt': 'favicon for my website',
+        'link': 'https://www.itaie.me',
+    },
+    {
+        'src': Email,
+        'alt': 'an envelope',
+        'link': 'mailto:itainepstein@gmail.com',
+    },
+    {
+        'src': GitHub,
+        'alt': 'github logo',
+        'link': 'https://www.github.com/itaie01',
+    },
+    {
+        'src': LinkedIn,
+        'alt': 'linkedin logo',
+        'link': 'https://www.linkedin.com/in/itai-epstein',
+    },
+];
+---
+
+<div class="flex gap-x-1 pt-1 print:hidden">
+    { socials.map( social => <Social socialObj={social} /> ) }
+</div>
