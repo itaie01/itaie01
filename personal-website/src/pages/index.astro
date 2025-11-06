@@ -5,7 +5,8 @@ import Socials from '../components/Socials.astro';
 
 import { Image } from 'astro:assets';
 
-import ItaiPixelated from '../assets/itai-pixelated.png';
+// import ItaiPixelated from '../assets/itai-pixelated.png';
+import ItaiPixelatedNoBackground from '../assets/itai-pixelated-no-background.png';
 const pageTitle = 'Itai Epstein'
 
 ---
@@ -14,7 +15,7 @@ const pageTitle = 'Itai Epstein'
     <div class="flex flex-auto justify-center content-middle gap-10 flex-wrap">
         <div class="md:pt-[16rem]">
             <Image
-                src={ItaiPixelated}
+                src={ItaiPixelatedNoBackground}
                 alt='pixelated version of itai epstein'
                 class="dark:opacity-[75] portrait-pixel-corners"
             />

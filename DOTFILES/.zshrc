@@ -143,6 +143,9 @@ export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/texlive/2023basic/bin/universal-darwin:$PATH"
 export PATH="/Users/itai-epstein/.local/bin:$PATH",
 export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
+export PATH="/usr/local/texlive/2025basic/bin/universal-darwin:$PATH"
+
+# export R_HOME="/opt/homebrew/Caskroom/miniforge/base/R radian"
 
 
 alias ls="eza --icons --tree --level=1"
